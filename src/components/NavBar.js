@@ -17,7 +17,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import AddIcon from "@material-ui/icons/Add";
 import { useNavigate } from "react-router-dom";
 
-const drawerWidth = 240;
+const drawerWidth = 220;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    backgroundColor: "#47126b",
+    backgroundColor: "#FFA500",
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "#822faf",
+    backgroundColor: "#1F4690",
   },
   drawerHeader: {
     display: "flex",
@@ -129,7 +129,7 @@ const NavBar = () => {
             className={classes.heading}
             onClick={() => navigate("/")}
           >
-            Be-Zen Notes
+            Notes App
           </Typography>
         </Toolbar>
       </AppBar>

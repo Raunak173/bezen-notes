@@ -7,7 +7,7 @@ import EditNote from "./pages/EditNote";
 
 function App() {
   return (
-    <div className=" bg-[#571089]" style={{ minHeight: "100vh" }}>
+    <div className=" bg-[#FFE5B4]" style={{ minHeight: "100vh" }}>
       <BrowserRouter>
         <NavBar />
         <Routes>

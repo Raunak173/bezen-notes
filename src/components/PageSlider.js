@@ -7,9 +7,9 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       marginTop: theme.spacing(0),
     },
-    "& .MuiPaginationItem-root": {
-      color: "#fff",
-    },
+    // "& .MuiPaginationItem-root": {
+    //   color: "#fff",
+    // },
   },
 }));
 

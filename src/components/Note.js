@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   chip: {
-    color: "white",
-    backgroundColor: "#ea698b",
+    backgroundColor: "#ffd500",
   },
   con: {
-    backgroundColor: "#822faf",
+    backgroundColor: "#3A5BA0",
     width: 350,
     height: 250,
     color: "white",
@@ -32,7 +31,7 @@ const Note = ({ note, id }) => {
   return (
     <div className={classes.con}>
       <Link to={`/${note.id}`} state={{ note: note }}>
-        <div className="bg-[#47126b] flex justify-center items-center w-[300px] md:w-[350px] h-[50px]">
+        <div className="bg-[#FFA500] flex justify-center items-center w-[300px] md:w-[350px] h-[50px] md:text-xl text-black">
           <p>{note.title}</p>
         </div>
       </Link>
