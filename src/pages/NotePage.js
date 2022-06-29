@@ -8,7 +8,7 @@ import SnackBar from "../components/SnackBar";
 import CreateIcon from "@material-ui/icons/Create";
 import DeleteIcon from "@material-ui/icons/Delete";
 import pinD from "../images/pinD.png";
-//import pinL from "../images/pinL.png";
+import pinL from "../images/pinL.png";
 
 const useStyles = makeStyles((theme) => ({
   chip: {
@@ -88,7 +88,11 @@ const NotePage = () => {
             onClick={() => pinNote(note)}
           >
             Pin
-            <img src={pinD} width={20} alt="pin" />
+            {note.pin === false ? (
+              <img src={pinD} width={20} alt="pin" />
+            ) : (
+              <img src={pinL} width={20} alt="pin" />
+            )}
           </button>
         </div>
       </div>

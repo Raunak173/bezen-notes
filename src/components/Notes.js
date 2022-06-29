@@ -24,9 +24,7 @@ const Notes = () => {
   const totalNotes = notes.length;
   const count = Math.ceil(totalNotes / notesPerPage);
   let pinned = currentNotes.filter((note) => note.pin === true);
-  console.log(pinned);
   let notPinned = currentNotes.filter((note) => note.pin === false);
-  console.log(notPinned);
   return (
     <div className="flex flex-col gap-y-10">
       {pinned.length > 0 && (
@@ -41,13 +39,13 @@ const Notes = () => {
       )}
       {pinned.length > 0 && <Divider />}
       {notPinned && (
-        <div className="flex flex-wrap justify-center w-[80%] m-auto gap-x-14 gap-y-7 -mt-2">
+        <div className="flex flex-wrap justify-center w-[80%] m-auto gap-x-14 gap-y-7 -mt-2 pb-14">
           {notPinned.map((p) => (
             <Note note={p} />
           ))}
         </div>
       )}
-      <div className="fixed bottom-4 md:left-[45%] left-[25%]">
+      <div className="fixed bottom-1 md:left-[45%] left-[25%]">
         <PageSlider
           count={count}
           currentPage={currentPage}
