@@ -3,11 +3,12 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import Chip from "@material-ui/core/Chip";
 import { makeStyles } from "@material-ui/core/styles";
 import { db } from "../firebase-config";
-import { deleteDoc, doc } from "firebase/firestore";
+import { deleteDoc, doc, updateDoc } from "firebase/firestore";
 import SnackBar from "../components/SnackBar";
 import CreateIcon from "@material-ui/icons/Create";
 import DeleteIcon from "@material-ui/icons/Delete";
-import RoomIcon from "@material-ui/icons/Room";
+import pinD from "../images/pinD.png";
+//import pinL from "../images/pinL.png";
 
 const useStyles = makeStyles((theme) => ({
   chip: {
@@ -35,6 +36,22 @@ const NotePage = () => {
     await deleteDoc(noteRef);
     setOpen(true);
     setTimeout(() => navigate("/"), 2000);
+  };
+  const pinNote = async (n) => {
+    if (n.pin === true) {
+      n.pin = false;
+    } else {
+      n.pin = true;
+    }
+
+    const newN = {
+      title: n.title,
+      tagline: n.tagline,
+      content: n.content,
+      pin: n.pin,
+    };
+    await updateDoc(noteRef, newN);
+    navigate("/");
   };
 
   return (
@@ -68,10 +85,10 @@ const NotePage = () => {
           </button>
           <button
             className=" text-lg bg-[#FFD500] px-5 py-2 shadow-xl hover:bg-[#FFA500] flex items-center gap-x-2"
-            onClick={() => deleteNote(note.id)}
+            onClick={() => pinNote(note)}
           >
             Pin
-            <RoomIcon />
+            <img src={pinD} width={20} alt="pin" />
           </button>
         </div>
       </div>

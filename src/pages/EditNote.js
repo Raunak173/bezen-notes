@@ -13,6 +13,7 @@ const EditNote = () => {
     title: note.title,
     tagline: note.tagline,
     content: note.content,
+    pin: note.pin,
   });
   const [open, setOpen] = useState(false);
   const handleClose = (event, reason) => {
@@ -28,11 +29,12 @@ const EditNote = () => {
   };
   const editNote = async (e) => {
     e.preventDefault();
-    const { title, tagline, content } = n;
+    const { title, tagline, content, pin } = n;
     const newN = {
       title,
       tagline,
       content,
+      pin,
     };
     await updateDoc(noteRef, newN);
     setOpen(true);

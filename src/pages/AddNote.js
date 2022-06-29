@@ -20,6 +20,7 @@ const AddNote = () => {
     title: "",
     tagline: "",
     content: "",
+    pin: false,
   });
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -27,8 +28,8 @@ const AddNote = () => {
   };
   const createNote = async (e) => {
     e.preventDefault();
-    const { title, tagline, content } = note;
-    await addDoc(notesRef, { title, tagline, content });
+    const { title, tagline, content, pin } = note;
+    await addDoc(notesRef, { title, tagline, content, pin });
     setOpen(true);
     setTimeout(() => navigate("/"), 2000);
   };
